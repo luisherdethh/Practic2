@@ -11,13 +11,13 @@ public class Polynomial {
 
     // Constructor a partir dels coeficients del polinomi en forma d'array
     public Polynomial(float[] cfs) {
-        float prueba [] = new float[cfs.length];
+        Poly = new float[cfs.length];
         for (int i = cfs.length-1, j = 0; i >= 0; i--, j++){
-            prueba[i] = cfs[j];
+            Poly[i] = cfs[j];
         }
 
         //this.Poly = prueba;
-        System.out.println(Arrays.toString(prueba));
+        System.out.println(Arrays.toString(Poly));
     }
 
     // Constructor a partir d'un string
@@ -54,7 +54,35 @@ public class Polynomial {
     // Torna la representació en forma de String del polinomi. Override d'un mètode de la classe Object
     @Override
     public String toString() {
+        System.out.println(Arrays.toString(Poly));
 
-        return "";
+        boolean first = true;
+        StringBuilder sb = new StringBuilder();
+        for (int i = Poly.length-1; i>=0 ; i--) {
+            int coef = (int) Poly[i];
+            int exp = (int) i;
+
+            //Si es menor que cero, le agregamos un " - "
+            if (!first) {
+                if (coef < 0) sb.append(" - ");
+                else sb.append(" + ");
+            }
+            first = false;
+            if (coef != 1) sb.append(coef);
+            if (exp != 0) sb.append("x");
+            if (exp > 1) sb.append("^" + exp);
+
+
+
+
+
+//              if(Poly[i] == 0){
+//                  continue;
+//              }
+//              if((i == this.Poly.length-1) && (Poly[i]) < 0){
+//                  sb.append("-");
+//              }
+        }
+        return sb.toString();
     }
 }
