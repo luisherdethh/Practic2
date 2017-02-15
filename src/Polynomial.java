@@ -56,11 +56,12 @@ public class Polynomial {
     public String toString() {
         System.out.println(Arrays.toString(Poly));
 
+        //Cremos dos variables enteros coef(coheficiente) y exp(exponente)
         boolean first = true;
         StringBuilder sb = new StringBuilder();
         for (int i = Poly.length-1; i>=0 ; i--) {
-            int coef = (int) Poly[i];
-            int exp = (int) i;
+            int coef = (int) Poly[i]; //el coheficiente sera entero
+            int exp = (int) i; //El exponenten igual
 
             //Si es menor que cero, le agregamos un " - "
             if (!first) {
@@ -72,9 +73,11 @@ public class Polynomial {
             if (exp != 0) sb.append("x");
             if (exp > 1) sb.append("^" + exp);
 
-
-
-
+            for (int j=Poly.length-1; j>= 0; j--) {
+                if (Poly[j] != 0){
+                    return;
+                }
+            }
 
 //              if(Poly[i] == 0){
 //                  continue;
