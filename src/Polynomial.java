@@ -72,12 +72,13 @@ public class Polynomial {
             if (coef != 1) sb.append(coef);
             if (exp != 0) sb.append("x");
             if (exp > 1) sb.append("^" + exp);
-
+            boolean cero = true;
             for (int j=Poly.length-1; j>= 0; j--) {
                 if (Poly[j] != 0){
-                    return;
+                    cero = false;
                 }
             }
+            if (cero == true) return "0";
 
 //              if(Poly[i] == 0){
 //                  continue;
