@@ -15,9 +15,7 @@ public class Polynomial {
         for (int i = cfs.length-1, j = 0; i >= 0; i--, j++){
             Poly[i] = cfs[j];
         }
-
-        //this.Poly = prueba;
-        System.out.println(Arrays.toString(Poly));
+        //System.out.println(Arrays.toString(Poly));
     }
 
     // Constructor a partir d'un string
@@ -61,7 +59,6 @@ public class Polynomial {
     public String toString() {
         System.out.println(Arrays.toString(Poly));
 
-        //Cremos dos variables enteros coef(coheficiente) y exp(exponente)
         boolean first = true;
         StringBuilder sb = new StringBuilder();
 
@@ -76,6 +73,7 @@ public class Polynomial {
         //Si es true, nos devuelve cero.
         if (cero == true) return "0";
 
+        //Cremos dos variables enteros coef(coheficiente) y exp(exponente)
         for (int i = Poly.length-1; i>=0 ; i--) {
             int coef = (int) Poly[i]; //el coheficiente sera entero
             int exp = (int) i; //El exponenten igual
@@ -95,14 +93,6 @@ public class Polynomial {
             if (coef != 1) sb.append(coef);
             if (exp != 0) sb.append("x");
             if (exp > 1) sb.append("^" + exp);
-
-
-
-//            if(Poly[i] == 0) continue;
-
-//              if((i == this.Poly.length-1) && (Poly[i]) < 0){
-//                  sb.append("-");
-//              }
         }
         return sb.toString();
     }
